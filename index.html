@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" href="/estilos.css" >
+    <script src="dbfake.js"></script>
     <title>Ciência em Foco</title>
 </head>
 <body>
@@ -48,70 +49,24 @@
                     </li>
                 </ul>
             </aside>
-        <!---- FIM MAIS ACESSADAS---->
+
         
         <!-----SLIDER----->
         <nav class="slider">
             <div>
-                <h3><a href="noticia.html"> Lorem ipsum dolor sit amet.</a></h3>
-                <img src="http://lorempixel.com/400/200" alt="imagem da notícia">
-                <div>1/5</div>
-            </div>
-            <div>
-                <h3><a href="noticia.html"> Lorem ipsum dolor sit amet.</a></h3>
-                <img src="http://lorempixel.com/400/200" alt="imagem da notícia">
-                <div>2/5</div>
-            </div>
-            <div>
-                <h3><a href="noticia.html"> Lorem ipsum dolor sit amet.</a></h3>
-                <img src="http://lorempixel.com/400/200" alt="imagem da notícia">
-                <div>3/5</div>
-            </div>
-            <div>
-                <h3><a href="noticia.html">Lorem ipsum dolor sit amet.</a></h3>
-                <img src="http://lorempixel.com/400/200" alt="imagem da notícia">
-                <div>4/5</div>
+                <div id="lista-noticias1"></div>
             </div>
         </nav>
         <br>
-        <!----FIM SLIDER---->
+     
 
         <!----NOTÍCIAS SECUNDARIAS---->
         <div class="noticias_secundarias">
-            <div>
-                <h4><a href="noticia.html">Lorem ipsum dolor.</a></h4>
-                <img src="http://lorempixel.com/300/200" alt="imagem da notícia">
-                <p><a href="noticia.html">Lorem ipsum dolor sit amet, consectetur ...</a></p>
-            </div>
-            <div>
-                <h4><a href="noticia.html"> Lorem ipsum dolor.</a></h4>
-                <img src="http://lorempixel.com/300/200" alt="imagem da notícia">
-                <p><a href="noticia.html">Lorem ipsum dolor sit amet, consectetur ...</a></p>
-            </div>
-            <div>
-                <h4><a href="noticia.html"> Lorem ipsum dolor.</a></h4>
-                <img src="http://lorempixel.com/300/200" alt="imagem da notícia">
-                <p><a href="noticia.html">Lorem ipsum dolor sit amet, consectetur ...</a></p>
-            </div>
-            <div>
-                <h4><a href="noticia.html"> Lorem ipsum dolor.</a></h4>
-                <img src="http://lorempixel.com/300/200" alt="imagem da notícia">
-                <p><a href="noticia.html">Lorem ipsum dolor sit amet, consectetur ...</a></p>
-            </div>
-            <div>
-                <h4><a href="noticia.html"> Lorem ipsum dolor.</a></h4>
-                <img src="http://lorempixel.com/300/200" alt="imagem da notícia">
-                <p><a href="noticia.html">Lorem ipsum dolor sit amet, consectetur ...</a></p>
-            </div>
-            <div>
-                <h4><a href="noticia.html"> Lorem ipsum dolor.</a></h4>
-                <img src="http://lorempixel.com/300/200" alt="imagem da notícia">
-                <p><a href="noticia.html">Lorem ipsum dolor sit amet, consectetur ...</a></p>
-            </div>
+            <div id="lista-noticias2">
         </div>
-        <!----FIM NOTÍCIA SECUNDARIA-->
+       
+
     </main>
-    
 
     <footer>
         <!----RODAPÉ---->
@@ -133,7 +88,20 @@
         </div>
     </footer>
 
+    <script>
+        var not1 = '';
+        for (i = 0; i < db1.noti.length; i++) {
+            not1 += ` <h2> ${db1.noti[i].titulo}</h2> <br> <p><img src="${db1.noti[i].imagem}" <br> <a href="noticia.html">${db1.noti[i].descricao}</a></p>`;
+        }
+        document.getElementById('lista-noticias1').innerHTML = not1
+
+        var not2 = '';
+        for (i = 0; i < db2.noti.length; i++) {
+            not2 += ` <h3> ${db2.noti[i].titulo} </h3> <br> <p><img src="${db2.noti[i].imagem}" <br> <a href="noticia.html">${db2.noti[i].descricao}</a></p>`;
+        }
+        document.getElementById('lista-noticias2').innerHTML = not2;
+
+    </script>
 
 </body>
-
 </html>
