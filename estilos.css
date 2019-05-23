@@ -16,6 +16,7 @@ ul {
 
 a{
     text-decoration: none;
+    color: rgb(34, 32, 32);
 }
 
 img {
@@ -43,6 +44,7 @@ header {
 
 .Logo {
     display: flex;
+    text-align: center;
     justify-content: center;
     padding: 20px;
 }

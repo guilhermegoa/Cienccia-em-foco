@@ -85,13 +85,13 @@
     <script>
         var not1 = '';
         for (i = 0; i < db1.noti.length; i++) {
-            not1 += `<div> <h2> ${db1.noti[i].titulo}</h2> <br> <img src="${db1.noti[i].imagem}"></div>`;
+            not1 += `<div> <a href="noticia.html"><h2>${db1.noti[i].titulo}</h2> <br> <img src="${db1.noti[i].imagem}"></a></div>`;
         }
         document.getElementById('lista-noticias1').innerHTML = not1
 
         var not2 = '';
         for (i = 0; i < db2.noti.length; i++) {
-            not2 += ` <div> <h3> ${db2.noti[i].titulo} </h3> <br> <img src="${db2.noti[i].imagem}" <br> <div class="aorg"><a href="noticia.html">${db2.noti[i].descricao}</a></div> </div>`;
+            not2 += ` <div> <a href="noticia.html"><h3> ${db2.noti[i].titulo} </h3> <br> <img src="${db2.noti[i].imagem}" <br> <div class="aorg">${db2.noti[i].descricao}</a></div> </div>`;
         }
         document.getElementById('lista-noticias2').innerHTML = not2;
 
