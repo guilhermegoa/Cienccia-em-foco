@@ -39,13 +39,13 @@
             <aside>
                 <ul>
                     <li>
-                        <h3><a href="">Notícia do dia</a></h3>
+                        <h4><a href="">Notícia do dia</a></h4>
                     </li>
                     <li>
-                        <h3><a href="">Notícia da semana</a></h3>
+                        <h4><a href="">Notícia da semana</a></h4>
                     </li>
                     <li>
-                        <h3><a href="">Mais acessadas</a></h3>
+                        <h4><a href="">Mais acessadas</a></h4>
                     </li>
                 </ul>
             </aside>
@@ -95,7 +95,7 @@
             var saida1 = '';
             for (i = 0; i < dados1.articles.length; i++) {
                 saida1 += `<div class="slider">
-                        <a href=""><h2>${dados1.articles[i].title} </h2>
+                        <a href=""><h3>${dados1.articles[i].title} </h3>
                         <img src="${dados1.articles[i].urlToImage}" alt="">
                         </a></div>`
             }
@@ -116,7 +116,7 @@
             var saida2 = '';
             for (i = 0; i < dados2.articles.length; i++) {
                 saida2 += `<div class="noticias_secundarias">
-                        <a href=""><h2>${dados2.articles[i].title} </h2>
+                        <a href=""><h3>${dados2.articles[i].title} </h3>
                         <img src="${dados2.articles[i].urlToImage}" alt="">
                         <p>${dados2.articles[i].description}</p>
                         </a></div>`
