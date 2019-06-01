@@ -38,10 +38,8 @@
 
     <main>
         <!----NOTÍCIA---->
-        <article>
-           <h2>titulo</h2>
-           <p></p>
-           <img src="" alt="">
+        <article id="noticia">
+            <div class="notslider"></div>
         </article>
     </main>
 
@@ -64,6 +62,31 @@
             <a href="#"><i class="fab fa-twitter-square"></i></a>
         </div>
     </footer>
+
+    <script>
+        var req = new XMLHttpRequest();
+        var url = 'https://newsapi.org/v2/top-headlines?country=br&category=science&pageSize=4&apiKey=ec8f347bce0646d3abc7f2f30d73c34d';
+
+        function processaDados() {
+            var dados = JSON.parse (req.responseText);
+            var saida = '';
+
+                saida += `<div class="notslider">
+                    <h2>${dados.articles[1].title} </h2>
+                    <p>${dados.articles[1].content}</p>
+                    <img src="${dados.articles[1].urlToImage}" alt="">
+                    </div>`
+            
+            document.getElementById('noticia').innerHTML = saida;
+        }
+
+        function getData() {
+            req.onload = processaDados;
+            req.open('GET', url, true);
+            req.send();
+        }
+        getData()
+    </script>
 </body>
 
 </html>

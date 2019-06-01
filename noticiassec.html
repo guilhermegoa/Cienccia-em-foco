@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="author" content="Guilherme Oliveira">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="saúde news" content="Trabalho DIW">
+    <meta name="keywords" content="saúde news, news, saúde, tis">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="/estilos.css" >
+    <title>Saúde News</title>
+</head>
+
+
+
+
+<body>
+    <header>
+        <div class="Logo">
+            <!----LOGO DO SITE------>
+            <h1 ><a href="index.html">Saúde News</h1>
+            </a>
+
+        </div>
+        <!----MENU DO SITE----->
+        <nav class="Menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Categoria </a></li>
+                <li><a href="">Categoria </a></li>
+                <li><a href="">Categoria </a></li>
+            </ul>
+        </nav>
+    </header><br><br>
+
+    <main>
+        <!----NOTÍCIA---->
+        <article id="noticiasec">
+            <div class="notsec"></div>
+        </article>
+    </main>
+
+    <footer>
+        <!----RODAPÉ---->
+        <table border="1">
+            <caption><b style="font-size: 30px">Para contato</b></caption>
+            <tr style="font-size: 10px">
+                <th>Tel</th>
+                <th><a href="tel:" >(XX) XXXXX-XXXXX</a></th>
+            </tr>
+            <tr style="font-size: 10px">
+                <th>email</th>
+                <th><a href="email: "> XXXXXX@XXX.br</a></th>
+            </tr>
+        </table>
+        <div class="rede_sociais">
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter-square"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        var req = new XMLHttpRequest();
+        var url = 'https://newsapi.org/v2/top-headlines?country=br&category=science&pageSize=4&apiKey=ec8f347bce0646d3abc7f2f30d73c34d';
+
+        function processaDados() {
+            var dados = JSON.parse (req.responseText);
+            var saida = '';
+
+                saida += `<div class="notsec">
+                    <h2>${dados.articles[1].title} </h2>
+                    <p>${dados.articles[1].content}</p>
+                    <img src="${dados.articles[1].urlToImage}" alt="">
+                    </div>`
+            
+            document.getElementById('noticiasec').innerHTML = saida;
+        }
+
+        function getData() {
+            req.onload = processaDados;
+            req.open('GET', url, true);
+            req.send();
+        }
+        getData()
+    </script>
+</body>
+
+</html>
