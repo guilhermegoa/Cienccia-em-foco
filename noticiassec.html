@@ -65,7 +65,7 @@
 
     <script>
         var req = new XMLHttpRequest();
-        var url = 'https://newsapi.org/v2/top-headlines?country=br&category=science&pageSize=4&apiKey=ec8f347bce0646d3abc7f2f30d73c34d';
+        var url = 'https://newsapi.org/v2/everything?q=science&language=pt&pageSize=6&apiKey=ec8f347bce0646d3abc7f2f30d73c34d';
 
         function processaDados() {
             var dados = JSON.parse (req.responseText);
