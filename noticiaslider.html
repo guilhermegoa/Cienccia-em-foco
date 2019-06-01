@@ -70,7 +70,7 @@
         function processaDados() {
             var dados = JSON.parse (req.responseText);
             var saida = '';
-
+                    //Aprender a passar esse parametro para noticia
                 saida += `<div class="notslider">
                     <h2>${dados.articles[1].title} </h2>
                     <p>${dados.articles[1].content}</p>
