@@ -64,20 +64,27 @@
     </footer>
 
     <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
         var req = new XMLHttpRequest();
         var url = 'https://newsapi.org/v2/everything?q=science&language=pt&pageSize=6&apiKey=ec8f347bce0646d3abc7f2f30d73c34d';
 
         function processaDados() {
             var dados = JSON.parse (req.responseText);
             var saida = '';
-                //Aprender a passar esse parametro para noticia
+                
+            for (i = 0; i < dados.articles.length; i++) {
+                    if (id == i) {
                 saida += `<div class="notsec">
-                    <h2>${dados.articles[1].title} </h2>
-                    <p>${dados.articles[1].content}</p>
-                    <img src="${dados.articles[1].urlToImage}" alt="">
-                    </div>`
+                    <h2>${dados.articles[i].title} </h2>
+                    <p>${dados.articles[i].content}</p>
+                    <img src="${dados.articles[i].urlToImage}" alt="">
+                    </div>`}
             
             document.getElementById('noticiasec').innerHTML = saida;
+            }
         }
 
         function getData() {
